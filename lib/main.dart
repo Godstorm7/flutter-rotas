@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_rotas/model/contato.model.dart';
+import 'package:flutter_rotas/page/contato.Page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -88,7 +89,13 @@ class _MyHomePageState extends State<MyHomePage> {
               title: Text(agenda[index].nome),
               subtitle: Text(agenda[index].telefone),
               onTap: () {
-                print('Clicou no contato $index');
+                //
+                Navigator.push(
+                  //
+                  context, MaterialPageRoute(
+                    builder: (context) => ContatoPage(
+                      //
+                      contato: agenda[index])));
               },
             ),
             separatorBuilder: (context, _) => Divider(),
